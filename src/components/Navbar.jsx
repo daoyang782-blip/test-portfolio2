@@ -6,25 +6,30 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [active, setActive] = useState('Home')
-
+  
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const closeMenu = () => setMenuOpen(false)
+    if (menuOpen) window.addEventListener('click', closeMenu)
+    return () => window.removeEventListener('click', closeMenu)
+  }, [menuOpen])
 
+  
   const handleNav = (link) => {
     setActive(link)
     setMenuOpen(false)
+    
+    // ໃຊ້ link ທີ່ສົ່ງມາຈາກການ Click ເພື່ອ Scroll
     const el = document.getElementById(link.toLowerCase())
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__logo" onClick={() => handleNav('Home')}>
         <span className="logo-bracket">&lt;</span>
-        <span className="logo-name">Alex</span>
+        <span className="logo-name">Daoya</span>
         <span className="logo-bracket">/&gt;</span>
       </div>
 
@@ -45,7 +50,7 @@ export default function Navbar() {
       <button
         className={`navbar__burger ${menuOpen ? 'navbar__burger--open' : ''}`}
         onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
+        aria-label="Open navigation menu"
       >
         <span /><span /><span />
       </button>

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 const socials = [
-  { label: 'GitHub', icon: '⌨️', href: 'https://github.com', handle: '@alexmorgan' },
-  { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com', handle: 'in/alexmorgan' },
-  { label: 'Twitter', icon: '🐦', href: 'https://twitter.com', handle: '@alex_codes' },
-  { label: 'Dribbble', icon: '🏀', href: 'https://dribbble.com', handle: '@alexmorgan' },
+  { label: 'GitHub', icon: '⌨️', href: 'https://github.com', handle: '@Daoya Yongma' },
+  { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com', handle: 'in/daoya yongma' },
+  { label: 'Twitter', icon: '🐦', href: 'https://twitter.com', handle: '@Daoya_codes' },
+  { label: 'Dribbble', icon: '🏀', href: 'https://dribbble.com', handle: '@Daoya Yongma' },
 ]
 
 export default function Contact() {
@@ -16,6 +16,8 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
     setStatus('loading')
+    if (status === 'loading') return
+    setTimeout(() => setStatus(null), 3000)
     setTimeout(() => {
       setStatus('success')
       setForm({ name: '', email: '', subject: '', message: '' })
@@ -41,28 +43,28 @@ export default function Contact() {
               <div className="contact-detail__icon">📧</div>
               <div>
                 <small>Email</small>
-                <a href="mailto:alex@example.com">alex@example.com</a>
+                <a href="mailto:daoyang782@gmail.com">daoyang782@gmail.com</a>
               </div>
             </div>
             <div className="contact-detail">
               <div className="contact-detail__icon">📱</div>
               <div>
                 <small>Phone</small>
-                <a href="tel:+14155551234">+1 (415) 555-1234</a>
+                <a href="tel:+14155551234"> (+856) 2091534161</a>
               </div>
             </div>
             <div className="contact-detail">
               <div className="contact-detail__icon">📍</div>
               <div>
                 <small>Location</small>
-                <span>San Francisco, CA — Remote OK</span>
+                <span>Vientiane, Laos</span>
               </div>
             </div>
             <div className="contact-detail">
               <div className="contact-detail__icon">🕐</div>
               <div>
-                <small>Working Hours</small>
-                <span>Mon–Fri, 9AM–6PM PST</span>
+                <small>studying Hours</small>
+                <span>Mon–Fri, 8AM–4PM PST</span>
               </div>
             </div>
 

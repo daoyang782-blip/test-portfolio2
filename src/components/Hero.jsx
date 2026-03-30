@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-
+import herodaoImg from '../assets/herodao.jpeg';
 export default function Hero() {
   const blobRef = useRef(null)
 
@@ -37,10 +37,10 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="hero__subtitle">
-          Full-Stack Developer & UI/UX Designer — turning complex ideas into
-          elegant, performant web applications.
-        </p>
+       <p className="hero__subtitle">
+          Frontend Developer & UI/UX Designer — creating modern, responsive, 
+          and user-friendly web experiences with clean design and smooth interactions.
+       </p>
 
         <div className="hero__cta">
           <button
@@ -62,9 +62,9 @@ export default function Hero() {
 
         <div className="hero__stats">
           {[
-            { value: '5+', label: 'Years Experience' },
-            { value: '40+', label: 'Projects Built' },
-            { value: '15+', label: 'Happy Clients' },
+            { value: '100%', label: 'Continuous Learning' }, 
+            { value: '7+', label: 'Academic Projects' },    
+            { value: '6+', label: 'Tech Stack' }
           ].map((s) => (
             <div className="stat" key={s.label}>
               <span className="stat__value">{s.value}</span>
@@ -78,12 +78,16 @@ export default function Hero() {
         <div className="hero__card-container">
           <div className="profile-card">
             <div className="profile-card__avatar">
-              <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Alex&backgroundColor=b6e3f4" alt="Profile" />
+              <img src={herodaoImg}
+              alt="Daoya Yongma" 
+              style={{ objectPosition: 'center top' }} 
+            />
             </div>
             <div className="profile-card__info">
-              <h3>Alex Morgan</h3>
-              <p>Full-Stack Developer</p>
+              <h3>Daoya Yongma </h3>
+              <p>Frontend Developer</p>
             </div>
+            
             <div className="profile-card__tags">
               <span>React</span><span>Node.js</span><span>TypeScript</span>
             </div>
